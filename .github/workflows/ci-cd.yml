@@ -27,6 +27,8 @@ jobs:
 
       - name: Run Unit Tests
         run: mvn test -Dtest="*ServiceTest,*ValidationServiceTest" -DfailIfNoTests=false
+        env:
+          SPRING_DATA_MONGODB_URI: mongodb://localhost:27017/testdb
 
       - name: Generate Test Report
         if: always()
